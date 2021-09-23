@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  myhttp2server:
+    image: serverhttp2talk:latest
+    entrypoint: "tail -f /dev/null"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/code
+
+  myhttp2client:
+    image: hermes:latest
+    entrypoint: "tail -f /dev/null"
+    volumes:
+      - .:/code
+
+networks:
+  default:
+    name: myhttp2-network
+    attachable: true

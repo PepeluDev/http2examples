@@ -23,5 +23,5 @@ services:
 
 networks:
   default:
-    name: myhttp2-network
+    name: http2-network
     attachable: true

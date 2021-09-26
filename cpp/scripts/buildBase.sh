@@ -1,3 +1,5 @@
 #!/bin/bash
 
-docker build --no-cache -t cppserverbase -f docker/Dockerfile .
+readonly GIT_ROOT_DIR=$(git rev-parse --show-toplevel)
+
+docker build -t cppserverbase -f ${GIT_ROOT_DIR}/cpp/docker/base/Dockerfile .

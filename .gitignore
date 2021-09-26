@@ -4,4 +4,4 @@
 */build
 */node_modules
 
-tcpdump
+**/*.pcap

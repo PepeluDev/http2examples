@@ -1,5 +1,5 @@
 {
-    "dns": "myhttp2server",
+    "dns": "nodehttp2server",
     "port": "3000",
     "secure": true,
     "timeout": 5000,

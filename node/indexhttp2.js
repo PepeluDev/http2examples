@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
 })
 
 const options = {
-  key: fs.readFileSync('/usr/local/share/ca-certificates/myhttp2server.key'),
-  cert:  fs.readFileSync('/usr/local/share/ca-certificates/myhttp2server.crt')
+  key: fs.readFileSync('/usr/local/share/ca-certificates/nodehttp2server.key'),
+  cert:  fs.readFileSync('/usr/local/share/ca-certificates/nodehttp2server.crt')
 };
 
 spdy.createServer(options, app)

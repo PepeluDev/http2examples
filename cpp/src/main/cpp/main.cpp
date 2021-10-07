@@ -65,15 +65,15 @@ int main(int argc, char *argv[]) {
   });
 
   // TLS context for HTTP/2
-  boost::asio::ssl::context tlsCtx(boost::asio::ssl::context::sslv23);
+  /*boost::asio::ssl::context tlsCtx(boost::asio::ssl::context::sslv23);
   tlsCtx.use_private_key_file("/usr/local/share/ca-certificates/cpphttp2server.key",
                               boost::asio::ssl::context::pem);
   tlsCtx.use_certificate_chain_file("/usr/local/share/ca-certificates/cpphttp2server.crt");
-  configure_tls_context_easy(ec, tlsCtx);
+  configure_tls_context_easy(ec, tlsCtx);*/
 
   std::cout << "STARTING HTTP/2 CPP server!" << std::endl;
   //std::cout << "STARTING HTTP/2 CPP server WITH " << cores << " concurrent threads!" << std::endl;
-  if (server.listen_and_serve(ec,tlsCtx, "0.0.0.0", "3000")) {
+  if (server.listen_and_serve(ec, "0.0.0.0", "80")) {
     std::cerr << "error: " << ec.message() << std::endl;
   }
 

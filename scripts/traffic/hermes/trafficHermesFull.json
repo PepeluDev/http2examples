@@ -1,0 +1,55 @@
+{
+  "dns": "server-mock",
+  "port": "8080",
+  "secure": false,
+  "timeout": 5000,
+  "ranges": {
+    "range_1": {
+      "min": 0,
+      "max": 999999
+    }
+  },
+  "flow": [
+    "post1",
+    "put1"
+  ],
+  "messages": {
+    "post1": {
+      "method": "POST",
+      "url": "url/example/path/id-<range_1>",
+      "body": {
+        "field1": "id-<range_1>-suffix",
+        "field2": "some_stuff",
+        "field3": {
+          "sub_field1": 0,
+          "subfield2": "some_string"
+        }
+      },
+      "response": {
+        "code": 200
+      },
+      "save_from_answer":{
+        "name" : "post_response_key1_value",
+        "path" : "/response/key1",
+        "value_type": "string"
+      }
+    },
+    "put1": {
+      "method": "PUT",
+      "url": "url/example/path?id=id-<range_1>",
+      "body": {
+        "field2": "value2"
+      },
+      "add_from_saved_to_body":{
+        "name": "post_response_key1_value",
+        "path": "/request/field1",
+        "type": "string"
+      },
+      "response": {
+        "code": 200
+      }
+    }
+  }
+}
+
+

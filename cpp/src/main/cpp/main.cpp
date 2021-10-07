@@ -55,6 +55,7 @@ int main(int argc, char *argv[]) {
   // Normal application/json resource
   server.handle("/", [](const request &req, const response &res) {
     std::cout << "Got a / request!" << std::endl;
+    std::this_thread::sleep_for (std::chrono::milliseconds(30));
     nghttp2::asio_http2::header_map headers;
     headers.insert(
       std::make_pair<std::string, nghttp2::asio_http2::header_value>(

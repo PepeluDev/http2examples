@@ -1,7 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const spdy = require('spdy')
-const port = 3000
+const port = 443
 
 const app = express()
 

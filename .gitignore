@@ -4,4 +4,10 @@
 */build
 */node_modules
 
-**/*.pcap
+*.pcap
+
+*.crt
+*.key
+*.srl
+
+*hermes.out.*

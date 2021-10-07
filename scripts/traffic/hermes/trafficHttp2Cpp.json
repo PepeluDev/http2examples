@@ -1,7 +1,7 @@
 {
     "dns": "cpphttp2server",
-    "port": "3000",
-    "secure": true,
+    "port": "80",
+    "secure": false,
     "timeout": 5000,
     "ranges": {
       "range_1": {

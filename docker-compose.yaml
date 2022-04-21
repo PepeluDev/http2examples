@@ -1,12 +1,24 @@
 version: '3.7'
 services:
-  nodehttp2server:
+  nginxproxy:
+    image: nginx:alpine
+    depends_on:
+      - nodehttp1server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
+  nodehttp1server:
     image: nodeserverhttp2talk:latest
-    entrypoint: "tail -f /dev/null"
+    # The image server is actually http/1.1 so we use the nginx proxy
+    # to connect over http2
+    #entrypoint: "tail -f /dev/null"
     ports:
       - "3000:3000"
     volumes:
       - .:/code
+
   cpphttp2server:
     image: cppserverhttp2talk:latest
     entrypoint: "tail -f /dev/null"

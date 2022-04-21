@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 
   std::cout << "STARTING HTTP/2 CPP server!" << std::endl;
   //std::cout << "STARTING HTTP/2 CPP server WITH " << cores << " concurrent threads!" << std::endl;
-  if (server.listen_and_serve(ec, "0.0.0.0", "80")) {
+  if (server.listen_and_serve(ec, "0.0.0.0", "3000")) {
     std::cerr << "error: " << ec.message() << std::endl;
   }
 
